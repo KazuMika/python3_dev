@@ -1,12 +1,12 @@
-version: '3'
+version: "3"
 services:
-  python3:
-    restart: always
-    build: .
-    container_name: 'python3'
-    working_dir: '/root/'
-    tty: true
+  app:
+    container_name: "python_machine_leaning"
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: python_machine_learning
     volumes:
-      - ./opt:/root/opt
-
+      - $PWD:/home/DeepLearning
+    tty: true
 
